@@ -18,87 +18,53 @@ import java.util.ArrayList;
 
 public class BarChartActivity extends AppCompatActivity {
 
-    private Button button;
-    private Button button3;
-    private EditText editText;
-    private EditText editText1;
+    private Button buttonAdd, buttonBack;
+    private EditText textPositionNumber, textValue;
+    BarDataSet barDataSet;
+    BarData barData;
+    BarChart barChart;
 
-
-
-
-
-    ArrayList<BarEntry> valueArray = new ArrayList<>();
-
-
-    ArrayList<Float> x = new ArrayList<Float>();
-    ArrayList<Float> y = new ArrayList<Float>();
-
-    //float testing[] = {1f,2f};
-    //float testing1[] = {2f,3f,4f,5f,7f};
+    ArrayList<BarEntry> chartValueArray = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bar_chart);
 
+        buttonAdd = (Button) findViewById(R.id.buttonAdd);
+        buttonBack = (Button) findViewById(R.id.buttonBack);
+        textPositionNumber = (EditText) findViewById(R.id.textPositionNumber);
+        textValue = (EditText) findViewById(R.id.textValue);
 
-
-        button = (Button) findViewById(R.id.button2);
-        button3 = (Button) findViewById(R.id.button3);
-        editText = (EditText) findViewById(R.id.editTextNumber);
-        editText1 = (EditText) findViewById(R.id.editTextX);
-
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                String xvalue = editText1.getText().toString();
-                float xFloat = Float.parseFloat(xvalue );
-                x.add((float) xFloat);
-
-                String yvalue = editText.getText().toString();
-                float yFloat = Float.parseFloat(yvalue);
-                y.add((float) yFloat);
-
-
-            }
-        });
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                test();
-            }
-        });
-
-
-
-
-    }
-
-    public void test(){
-
-
-
-        for (int i = 0; i < x.size(); i++){
-            valueArray.add(new BarEntry(x.get(i),y.get(i)));
-
-        }
-
-
-
-        BarDataSet barDataSet = new BarDataSet(valueArray,"RandomNumbers");
+        barDataSet = new BarDataSet(chartValueArray,"");
         barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
         barDataSet.setValueTextColor(Color.BLACK);
         barDataSet.setValueTextSize(16f);
+        barData = new BarData(barDataSet);
+        barChart = findViewById(R.id.barChart);
+        barChart.setData(new BarData(barDataSet));
+        barChart.getDescription().setText("");
+        barChart.invalidate();
 
-        BarData barData = new BarData(barDataSet);
-        BarChart barChart = findViewById(R.id.barChart);
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
-        barChart.setFitBars(true);
-        barChart.setData(barData);
-        barChart.getDescription().setText("Testing");
-        barChart.animateY(2000);
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                float xFloat = Float.parseFloat(textPositionNumber.getText().toString());
+                float yFloat = Float.parseFloat(textValue.getText().toString());
+                chartValueArray.add(new BarEntry(xFloat, yFloat));
+                barDataSet.setValues(chartValueArray);
+                barChart.setData(new BarData(barDataSet));
+                barChart.invalidate();
+
+            }
+        });
 
     }
+
 }

@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">LPD</string>
+    <string name="pie_chart_name">Create Pie Chart</string>
+    <string name="bar_chart_name">Create Bar Chart</string>
+    <string name="back_name">Back</string>
+    <string name="create_name">Create</string>
+    <string name="add_value_name">Add Value</string>
+    <string name="name_hint">Name</string>
+    <string name="value_hint">Value</string>
+    <string name="position_hint">Position</string>
+    <dimen name="btn_margin">10dp</dimen>
 </resources>
