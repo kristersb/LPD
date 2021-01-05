@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class BarChartActivity extends AppCompatActivity {
 
-    private Button buttonAdd, buttonBack;
+    private Button buttonAdd;
     private EditText textPositionNumber, textValue;
     BarDataSet barDataSet;
     BarData barData;
@@ -32,7 +32,6 @@ public class BarChartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bar_chart);
 
         buttonAdd = (Button) findViewById(R.id.buttonAdd);
-        buttonBack = (Button) findViewById(R.id.buttonBack);
         textPositionNumber = (EditText) findViewById(R.id.textPositionNumber);
         textValue = (EditText) findViewById(R.id.textValue);
 
@@ -45,12 +44,6 @@ public class BarChartActivity extends AppCompatActivity {
         barChart.setData(new BarData(barDataSet));
         barChart.getDescription().setText("");
         barChart.invalidate();
-
-        buttonBack.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                finish();
-            }
-        });
 
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

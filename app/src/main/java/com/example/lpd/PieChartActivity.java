@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class PieChartActivity extends AppCompatActivity {
 
-    private Button buttonAdd, buttonBack;
+    private Button buttonAdd;
     private EditText textName, textValue;
     PieDataSet dataSet;
     PieData pieData;
@@ -40,16 +40,8 @@ public class PieChartActivity extends AppCompatActivity {
         pieChart.invalidate();
 
         buttonAdd = (Button) findViewById(R.id.buttonAdd);
-        buttonBack = (Button) findViewById(R.id.buttonBack);
         textName = (EditText) findViewById(R.id.textName);
         textValue = (EditText) findViewById(R.id.textValue);
-
-
-        buttonBack.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                finish();
-            }
-        });
 
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
