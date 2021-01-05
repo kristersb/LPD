@@ -3,7 +3,6 @@ package com.example.lpd;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -17,8 +16,6 @@ import java.util.ArrayList;
 
 public class PieChartActivity extends AppCompatActivity {
 
-    private Button buttonAdd;
-    private EditText textName, textValue;
     PieDataSet dataSet;
     PieData pieData;
     PieChart pieChart;
@@ -39,19 +36,17 @@ public class PieChartActivity extends AppCompatActivity {
         pieChart.animateY(2000);
         pieChart.invalidate();
 
-        buttonAdd = (Button) findViewById(R.id.buttonAdd);
-        textName = (EditText) findViewById(R.id.textName);
-        textValue = (EditText) findViewById(R.id.textValue);
+        Button buttonAdd = findViewById(R.id.buttonAdd);
+        EditText textName = findViewById(R.id.textName);
+        EditText textValue = findViewById(R.id.textValue);
 
-        buttonAdd.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
+        buttonAdd.setOnClickListener(v -> {
 
-                float value = Float.parseFloat(textValue.getText().toString());
-                String name = textName.getText().toString();
-                valueArrays.add(new PieEntry(value, name));
-                pieChart.setData(pieData);
-                pieChart.invalidate();
-            }
+            float value = Float.parseFloat(textValue.getText().toString());
+            String name = textName.getText().toString();
+            valueArrays.add(new PieEntry(value, name));
+            pieChart.setData(pieData);
+            pieChart.invalidate();
         });
 
     }

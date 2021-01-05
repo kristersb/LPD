@@ -4,23 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ecf0f1"
-    android:orientation="vertical"
     tools:context="com.example.lpd.MainActivity">
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-        </LinearLayout>
-
+        android:background="#ecf0f1"
+        android:orientation="vertical"
+        android:layout_marginVertical="200dp">
         <Button
             android:id="@+id/buttonPieChart"
             android:layout_width="match_parent"
@@ -36,14 +27,6 @@
             android:layout_weight="1.3"
             android:layout_margin="@dimen/btn_margin"
             android:text="@string/bar_chart_name"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-        </LinearLayout>
-
     </LinearLayout>
 
 </LinearLayout>

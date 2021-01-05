@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:background="#ecf0f1"
     android:orientation="vertical"
-    tools:context="com.example.lpd.PieChartActivity">
+    tools:context="com.example.lpd.PieChartActivity"
+    tools:ignore="NestedWeights, Autofill" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,7 +32,7 @@
             android:id="@+id/textName"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="0.4"
             android:layout_margin="@dimen/btn_margin"
             android:hint="@string/name_hint"
             android:inputType="text"/>
@@ -41,7 +42,7 @@
             android:id="@+id/textValue"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1.5"
+            android:layout_weight="0.6"
             android:layout_margin="@dimen/btn_margin"
             android:hint="@string/value_hint"
             android:inputType="numberSigned"/>
@@ -58,7 +59,6 @@
             android:id="@+id/buttonAdd"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:layout_margin="@dimen/btn_margin"
             android:text="@string/add_value_name"/>
 

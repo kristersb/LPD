@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -18,7 +17,6 @@ import java.util.ArrayList;
 
 public class BarChartActivity extends AppCompatActivity {
 
-    private Button buttonAdd;
     private EditText textPositionNumber, textValue;
     BarDataSet barDataSet;
     BarData barData;
@@ -31,9 +29,9 @@ public class BarChartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bar_chart);
 
-        buttonAdd = (Button) findViewById(R.id.buttonAdd);
-        textPositionNumber = (EditText) findViewById(R.id.textPositionNumber);
-        textValue = (EditText) findViewById(R.id.textValue);
+        Button buttonAdd = findViewById(R.id.buttonAdd);
+        textPositionNumber = findViewById(R.id.textPositionNumber);
+        textValue = findViewById(R.id.textValue);
 
         barDataSet = new BarDataSet(chartValueArray,"");
         barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
@@ -45,17 +43,15 @@ public class BarChartActivity extends AppCompatActivity {
         barChart.getDescription().setText("");
         barChart.invalidate();
 
-        buttonAdd.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
+        buttonAdd.setOnClickListener(v -> {
 
-                float xFloat = Float.parseFloat(textPositionNumber.getText().toString());
-                float yFloat = Float.parseFloat(textValue.getText().toString());
-                chartValueArray.add(new BarEntry(xFloat, yFloat));
-                barDataSet.setValues(chartValueArray);
-                barChart.setData(new BarData(barDataSet));
-                barChart.invalidate();
+            float xFloat = Float.parseFloat(textPositionNumber.getText().toString());
+            float yFloat = Float.parseFloat(textValue.getText().toString());
+            chartValueArray.add(new BarEntry(xFloat, yFloat));
+            barDataSet.setValues(chartValueArray);
+            barChart.setData(new BarData(barDataSet));
+            barChart.invalidate();
 
-            }
         });
 
     }
