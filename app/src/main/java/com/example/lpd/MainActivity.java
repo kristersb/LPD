@@ -7,7 +7,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button buttonPieChart, buttonBarChart;
+    Button buttonPieChart, buttonBarChart, buttonLineChart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,10 +16,13 @@ public class MainActivity extends AppCompatActivity {
 
         buttonPieChart = findViewById(R.id.buttonPieChart);
         buttonBarChart = findViewById(R.id.buttonBarChart);
+        buttonLineChart = findViewById(R.id.buttonLineChart);
 
         buttonPieChart.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), PieChartActivity.class)));
 
         buttonBarChart.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), BarChartActivity.class)));
+
+        buttonLineChart.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), LineChartActivity.class)));
 
     }
 }
