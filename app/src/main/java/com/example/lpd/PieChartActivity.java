@@ -30,6 +30,7 @@ public class PieChartActivity extends AppCompatActivity {
         dataSet = new PieDataSet(valueArrays, "");
         dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
         pieData = new PieData(dataSet);
+        pieData.setValueTextSize(15f);
         pieChart = findViewById(R.id.pieChart);
         pieChart.setData(new PieData(dataSet));
         pieChart.getDescription().setText("");
