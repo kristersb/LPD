@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:layout_weight="1"
+    android:id="@+id/myLin" >
+
+    <TextView
+        android:id="@+id/textNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/cell_margin"
+        android:layout_weight="1.5"
+        android:background="#fff"
+        android:text="@string/num"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/textName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_margin="@dimen/cell_margin"
+        android:background="#fff"
+        android:hint="@string/name_hint"
+        android:textColor="@color/black"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/textValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_margin="@dimen/cell_margin"
+        android:background="#fff"
+        android:hint="@string/value_hint"
+        android:textColor="@color/black"
+        android:inputType="numberDecimal" />
+
+</LinearLayout>
+

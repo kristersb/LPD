@@ -9,5 +9,8 @@
     <string name="name_hint">Name</string>
     <string name="value_hint">Value</string>
     <string name="position_hint">Position</string>
+    <string name="edit_data">Edit</string>
+    <string name="num">1</string>
+    <dimen name="cell_margin">2dp</dimen>
     <dimen name="btn_margin">10dp</dimen>
 </resources>

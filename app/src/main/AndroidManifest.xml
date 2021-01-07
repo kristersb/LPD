@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LPD"
         tools:ignore="AllowBackup">
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +24,10 @@
             android:parentActivityName=".MainActivity" />
         <activity android:name=".LineChartActivity"
             android:parentActivityName=".MainActivity" />
+        <activity android:name=".PieSheet"
+            android:parentActivityName=".PieChartActivity"/>
+        <activity android:name=".BarSheet"
+            android:parentActivityName=".BarChartActivity"/>
     </application>
 
 </manifest>
