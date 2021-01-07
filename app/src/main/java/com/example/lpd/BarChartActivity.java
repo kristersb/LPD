@@ -42,7 +42,6 @@ public class BarChartActivity extends AppCompatActivity {
             intent.putIntegerArrayListExtra("arrayInteger", valueArrayListInteger);
             startActivityForResult(intent, 1);
         });
-
     }
 
     @Override

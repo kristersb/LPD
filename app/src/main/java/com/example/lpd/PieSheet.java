@@ -32,7 +32,7 @@ public class PieSheet extends AppCompatActivity {
 
         rowLayout = findViewById(R.id.rowLayout);
         for (int i = 0; i < 100; i++) {
-            addView(i, valueArrayFloat, valueArrayString);
+            addRow(i, valueArrayFloat, valueArrayString);
         }
 
     }
@@ -66,7 +66,7 @@ public class PieSheet extends AppCompatActivity {
 
 
     @SuppressLint("SetTextI18n")
-    private void addView(int num, ArrayList<Float> valueArrayFloat, ArrayList<String> valueArrayString) {
+    private void addRow(int num, ArrayList<Float> valueArrayFloat, ArrayList<String> valueArrayString) {
         final View rowView = getLayoutInflater().inflate(R.layout.sheet_line, null, false);
         TextView textNum = rowView.findViewById(R.id.textNum);
         EditText textName = rowView.findViewById(R.id.textName);

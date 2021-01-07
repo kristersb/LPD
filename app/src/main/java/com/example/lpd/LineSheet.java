@@ -12,7 +12,6 @@ import java.util.ArrayList;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
 public class LineSheet extends AppCompatActivity {
 
     LinearLayout rowLayout;
@@ -29,7 +28,7 @@ public class LineSheet extends AppCompatActivity {
 
         rowLayout = findViewById(R.id.rowLayout);
         for (int i = 0; i < 100; i++) {
-            addView(i, valueArrayFloat, valueArrayInteger);
+            addRow(i, valueArrayFloat, valueArrayInteger);
         }
 
     }
@@ -64,7 +63,7 @@ public class LineSheet extends AppCompatActivity {
 
 
     @SuppressLint("SetTextI18n")
-    private void addView(int num, ArrayList<Float> valueArrayFloat, ArrayList<Integer> valueArrayInteger) {
+    private void addRow(int num, ArrayList<Float> valueArrayFloat, ArrayList<Integer> valueArrayInteger) {
         final View rowView = getLayoutInflater().inflate(R.layout.sheet_line, null, false);
         TextView textNum = rowView.findViewById(R.id.textNum);
         EditText textPos = rowView.findViewById(R.id.textName);
